@@ -49,7 +49,7 @@ describe('ISBN', function () {
 
         it('returns a complete ISBN-10 if given incomplete ISBN-10 and ISBN-13', function () {
             var isbn = new ISBN({
-                isbn13: '??????9217284',
+                isbn13: '???????217284',
                 isbn10: '331???????'
             });
 
@@ -96,7 +96,7 @@ describe('ISBN', function () {
 
         it('returns a complete ISBN-13 if given incomplete ISBN-10 and ISBN-13', function () {
             var isbn = new ISBN({
-                isbn13: '??????9217284',
+                isbn13: '???????217284',
                 isbn10: '331???????'
             });
 

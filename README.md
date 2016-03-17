@@ -23,7 +23,7 @@ partialIsbn.isbn13(); //=> '9783319217284'
 
 // We can complete ISBNs if we have both ISBN-10 and ISBN-13 digits
 var twoPartialIsbns = new ISBN({
-    isbn13: '??????9217284',
+    isbn13: '???????217284',
     isbn10: '331???????'
 });
 twoPartialIsbns.isbn13(); //=> '9783319217284'
