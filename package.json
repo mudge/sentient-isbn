@@ -1,0 +1,29 @@
+{
+    "name": "sentient-isbn",
+    "version": "0.1.0",
+    "description": "A Sentient library for handling ISBN-10s and ISBN-13s",
+    "main": "./lib/isbn.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mudge/sentient-isbn.git"
+    },
+    "keywords": [
+        "sentient",
+        "isbn"
+    ],
+    "author": "Paul Mucur",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mudge/sentient-isbn/issues"
+    },
+    "homepage": "https://github.com/mudge/sentient-isbn#readme",
+    "dependencies": {
+        "sentient-lang": "0.0.0-alpha.0"
+    },
+    "devDependencies": {
+        "mocha": "^2.4.5"
+    }
+}
