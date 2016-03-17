@@ -12,21 +12,21 @@ Numbers](https://en.wikipedia.org/wiki/International_Standard_Book_Number)
 var ISBN = require('sentient-isbn');
 
 // We can convert ISBN-10s to ISBN-13s
-var isbn = new ISBN({ isbn10: [3, 3, 1, 9, 2, 1, 7, 2, 8, 3] });
-isbn.isbn10(); //=> [3, 3, 1, 9, 2, 1, 7, 2, 8, 3]
-isbn.isbn13(); //=> [9, 7, 8, 3, 3, 1, 9, 2, 1, 7, 2, 8, 4]
+var isbn = new ISBN({ isbn10: '3319217283' });
+isbn.isbn10(); //=> '3319217283'
+isbn.isbn13(); //=> '9783319217284'
 
 // We can also complete partial ISBNs
-var partialIsbn = new ISBN({ isbn10: [3, 3, 1, undefined, 2, 1, 7, 2, 8, 3] });
-partialIsbn.isbn10(); //=> [3, 3, 1, 9, 2, 1, 7, 2, 8, 3]
-partialIsbn.isbn13(); //=> [9, 7, 8, 3, 3, 1, 9, 2, 1, 7, 2, 8, 4]
+var partialIsbn = new ISBN({ isbn10: '331?217283' });
+partialIsbn.isbn10(); //=> '3319217283'
+partialIsbn.isbn13(); //=> '9783319217284'
 
 // We can complete ISBNs if we have both ISBN-10 and ISBN-13 digits
 var twoPartialIsbns = new ISBN({
-    isbn13: [undefined, undefined, undefined, undefined, undefined, undefined, 9, 2, 1, 7, 2, 8, 4],
-    isbn10: [3, 3, 1, undefined, undefined, undefined, undefined, undefined, undefined, undefined]
+    isbn13: '??????9217284',
+    isbn10: '331???????'
 });
-twoPartialIsbns.isbn13(); //=> [9, 7, 8, 3, 3, 1, 9, 2, 1, 7, 2, 8, 4]
+twoPartialIsbns.isbn13(); //=> '9783319217284'
 ```
 
 ## Installation
