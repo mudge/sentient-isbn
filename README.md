@@ -35,6 +35,39 @@ twoPartialIsbns.isbn13(); //=> '9783319217284'
 $ npm install mudge/sentient-isbn
 ```
 
+## Rationale
+
+This library is an exploration of [Chris Patuzzo's Sentient programming
+language](https://github.com/tuzz/sentient.js), using a declarative style to
+describe the format of ISBN-10s and ISBN-13s and their relationship to one
+another.
+
+The heart of the library is a [Sentient program which describes ISBNs in terms
+of
+invariants](https://github.com/mudge/sentient-isbn/blob/master/lib/isbn.js#L7-L240)
+such as:
+
+* All digits must be between 0 and 9 inclusive except an ISBN-10's check digit
+  which can include 10;
+* The sum of all digits of an ISBN-10 multiplied by its index modulo 11 must
+  be 0.
+
+With this in place, we can then convert ISBNs between formats _despite the
+fact we never write down the exact calculation procedure for ISBN check
+digits_. Instead, Sentient is able to infer a solution using only the
+invariants we have set.
+
+Admittedly, the library is much slower to convert ISBNs than a more
+traditional implementation but it also has novel abilities such as:
+
+* Being able to take partial ISBNs with some digits (not just the check digit)
+  missing and infer a possible valid candidate;
+* Combine partial ISBNs in different formats to infer a valid candidate of
+  either format.
+
+All this without explaining _how_ to perform such a procedure but instead
+_declaring_ the important properties of an ISBN.
+
 ## Acknowledgements
 
 [Chris Patuzzo](https://github.com/tuzz) for creating Sentient and helping me
