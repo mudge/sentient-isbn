@@ -1,4 +1,4 @@
-# Sentient ISBN
+# Sentient ISBN [![Build Status](https://travis-ci.org/mudge/sentient-isbn.svg?branch=master)](https://travis-ci.org/mudge/sentient-isbn)
 
 An implementation of [International Standard Book
 Numbers](https://en.wikipedia.org/wiki/International_Standard_Book_Number)
