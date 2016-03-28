@@ -44,7 +44,7 @@ another.
 
 The heart of the library is a [Sentient program which describes ISBNs in terms
 of
-invariants](https://github.com/mudge/sentient-isbn/blob/master/lib/isbn.js#L7-L240)
+invariants](https://github.com/mudge/sentient-isbn/blob/master/lib/isbn.snt)
 such as:
 
 * All digits must be between 0 and 9 inclusive except an ISBN-10's check digit
