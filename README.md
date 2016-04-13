@@ -5,7 +5,7 @@ Numbers](https://en.wikipedia.org/wiki/International_Standard_Book_Number)
 (both 10 and 13 digits) supporting conversion and correction using
 [Sentient](https://github.com/tuzz/sentient.js).
 
-**Current version:** 0.1.0  
+**Current version:** 0.1.1  
 **Supported Node.js versions:** 0.12
 
 ```javascript
