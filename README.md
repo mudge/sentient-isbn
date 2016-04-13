@@ -70,8 +70,9 @@ _declaring_ the important properties of an ISBN.
 
 ## Acknowledgements
 
-[Chris Patuzzo](https://github.com/tuzz) for creating Sentient and helping me
-"think <strike>with portals</strike> declaratively".
+[Chris Patuzzo](https://github.com/tuzz) for creating Sentient, contributing
+the concrete syntax version of the program and helping me "think <strike>with
+portals</strike> declaratively".
 
 ## License
 
