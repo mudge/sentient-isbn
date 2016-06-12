@@ -54,6 +54,20 @@ describe('ISBN', function () {
         });
     });
 
+    describe('#isbn10s', function () {
+        it('returns multiple results when found', function () {
+            var isbn = new ISBN({isbn10: '331921????'});
+
+            assert.deepEqual(['331921277X', '3319212176', '3319213911'], isbn.isbn10s(3));
+        });
+
+        it('returns a maximum number of results', function () {
+            var isbn = new ISBN({isbn10: '331921????'});
+
+            assert.deepEqual(['331921277X', '3319212176'], isbn.isbn10s(2));
+        });
+    });
+
     describe('#isbn13', function () {
         it('returns a given ISBN-13', function () {
             var isbn = new ISBN({isbn13: '9783319217284'});
@@ -95,6 +109,20 @@ describe('ISBN', function () {
             var isbn = new ISBN({isbn13: '???????217284', isbn10: '331???????'});
 
             assert.equal('9783319217284', isbn.isbn13());
+        });
+    });
+
+    describe('#isbn13s', function () {
+        it('returns multiple results when found', function () {
+            var isbn = new ISBN({isbn13: '???????217284'});
+
+            assert.deepEqual(['9782626217284', '9785146217284', '9781346217284'], isbn.isbn13s(3));
+        });
+
+        it('returns a maximum number of results', function () {
+            var isbn = new ISBN({isbn13: '???????217284'});
+
+            assert.deepEqual(['9782626217284', '9785146217284'], isbn.isbn13s(2));
         });
     });
 });

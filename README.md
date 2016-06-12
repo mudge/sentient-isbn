@@ -27,6 +27,10 @@ var twoPartialIsbns = new ISBN({
     isbn10: '331???????'
 });
 twoPartialIsbns.isbn13(); //=> '9783319217284'
+
+// We can return multiple ISBNs if there is ambiguity
+var partialIsbn13 = new ISBN({isbn13: '???????217284'});
+partialIsbn13.isbn13s(2); //=> ['9782626217284', '9785146217284']
 ```
 
 ## Installation
