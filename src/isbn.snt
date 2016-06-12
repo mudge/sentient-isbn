@@ -20,7 +20,7 @@ invariant ten_check_digit >= 0, ten_check_digit <= 10;
 invariant thirteen_check_digit >= 0, thirteen_check_digit <= 9;
 
 # Collect all digits in an ISBN-10.
-ten_digit = [
+tenDigit = [
   ten0,
   ten1,
   ten2,
@@ -75,7 +75,7 @@ odd_digits += ten8;
 invariant (even_digits + odd_digits * 3) % 10 == 0;
 
 # Collect together all the digits in an ISBN-13.
-thirteen_digit = [
+thirteenDigit = [
   9,
   7,
   8,
@@ -91,5 +91,5 @@ thirteen_digit = [
   thirteen_check_digit
 ];
 
-# Expose thirteen_digit and ten_digit in the result.
-vary thirteen_digit, ten_digit;
+# Expose thirteenDigit and tenDigit in the result.
+expose thirteenDigit, tenDigit;
