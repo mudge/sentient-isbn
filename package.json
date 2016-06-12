@@ -1,6 +1,6 @@
 {
   "name": "sentient-isbn",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A Sentient library for handling ISBN-10s and ISBN-13s",
   "main": "./lib/isbn.js",
   "scripts": {
