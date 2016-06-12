@@ -1,0 +1,53 @@
+html {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+#wrap {
+  margin: 0 auto;
+  max-width: 40em;
+  min-width: 70em;
+}
+
+h1 {
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.4;
+  margin: 1.5em 0;
+}
+
+input {
+  font-size: 2em;
+  text-align: center;
+  line-height: 1em;
+  border-radius: 0.2em;
+  border: 0.1em solid gray;
+  outline: none;
+  margin-right: 0.2em;
+  padding: 0.5em;
+}
+
+.note {
+  color: #333;
+  font-style: italic;
+}
+
+#convert {
+  border-radius: 0.2em;
+  font-size: 1.5em;
+  border: 2px solid #696;
+  background: #cfc;
+  color: #030;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5em 1em;
+}
+
+code {
+  font-family: Consolas, Menlo, monospace;
+  background: #eee;
+  color: #333;
+}

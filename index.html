@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1500">
+    <title>Sentient ISBN</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>Sentient ISBN</h1>
+
+      <p>Convert and recover <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number">ISBN-10s and ISBN-13s</a> using a <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">SAT solver</a>.</p>
+
+      <p>Try inputting an ISBN-10 or an ISBN-13 and pressing "Convert"; recover missing digits by using a <code>?</code>, e.g. <code>33192??283</code>; combine a partial ISBN-10 <em>and</em> a ISBN-13 to recover both simultaneously.</p>
+
+      <p>
+        <input type="text" id="ten-digit" maxlength="10" value="33192??283" placeholder="ISBN-10">
+      </p>
+
+      <p>
+        <input type="text" id="thirteen-digit" maxlength="13" placeholder="ISBN-13">
+      </p>
+
+      <p>
+        <button id="convert">Convert</button>
+      </p>
+
+      <p class="note">
+      Written with <a href="https://github.com/sentient-lang/sentient-lang">Sentient</a>, <a href="https://github.com/mudge/sentient-isbn">read the source code</a>.
+      </p>
+    </div>
+
+    <script src="bundle.js"></script>
+    <script>
+      (function () {
+        document.getElementById('convert').addEventListener(
+            'click',
+            function () {
+              var tenDigit = document.getElementById('ten-digit'),
+                  thirteenDigit = document.getElementById('thirteen-digit'),
+                  isbn10 = tenDigit.value,
+                  isbn13 = thirteenDigit.value,
+                  input = {},
+                  isbn;
+
+              if (isbn10.length === 10) {
+                  input.isbn10 = isbn10;
+              }
+
+              if (isbn13.length === 13) {
+                  input.isbn13 = isbn13;
+              }
+
+              isbn = new ISBN(input);
+
+              if (isbn.isbn10()) {
+                  tenDigit.value = isbn.isbn10();
+              }
+
+              if (isbn.isbn13()) {
+                  thirteenDigit.value = isbn.isbn13();
+              }
+            },
+            false
+        );
+      }());
+    </script>
+  </body>
+</html>
