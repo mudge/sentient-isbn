@@ -4,6 +4,7 @@ html {
 
 #wrap {
   margin: 0 auto;
+  padding: 0 2em;
   max-width: 40em;
   min-width: 70em;
 }
